@@ -6,16 +6,16 @@ import png
 # TODO add way of iterating over barcodes
 
 # make QR code from custom string
-qrobj = pyqrcode.QRCode('https://fvvianello.github.io/pymol_ar/', error='H')
-with open('output/test2_qr.png', 'wb') as f:
+qrobj = pyqrcode.QRCode('https://stefanovianello.github.io/Augmented_Reality/', error='H')
+with open('output/test_qr.png', 'wb') as f:
     qrobj.png(f, scale=10)
 
 # open the QR code to place the logo in the middle
-img = Image.open('output/test2_qr.png')
+img = Image.open('output/test_qr.png')
 width, height = img.size
 
 # open the logo image + white box image
-logo = Image.open('barcodes/6-barcode.png')
+logo = Image.open('barcodes/4.png')
 square = Image.open('barcodes/white_square.png')
 
 # place square, then logo on top
@@ -31,4 +31,4 @@ xmax = ymax = int((width / 2) + (logo_size / 2))
 logo = logo.resize((xmax - xmin, ymax - ymin))
 img.paste(logo, (xmin, ymin, xmax, ymax))
 
-img.save('output/test3_qr.png')
+img.save('output/final_qr.png')

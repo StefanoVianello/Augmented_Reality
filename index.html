@@ -2,27 +2,35 @@
 <html>
     <head>
       <meta charset="utf-8">
-      <title> Embryo AR splashpage </title>
+      <title> Embryo AR splashpage </title>  <!--Title of your page (page loads camera immediately)-->
       <meta name="description" content="Hello, World! - A-Frame">
       <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
       <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
       <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js">
-      </script>
+      </script> <!--you have to keep these three script tags as they are. They load necessary A-frame and ARjs scripts-->
     </head>
 
 
-    <body style="background-color:pink;">
+    <body style="background-color:pink;"> <!--set background color of your page-->
+
       <a-scene embedded vr-mode-ui="enabled: false" arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+      <!--AR objects exist within a "scene", filled with "assets"-->
+
         <a-assets>
-          <a-asset-item id="test_embryo" src="https://raw.githubusercontent.com/StefanoVianello/Augmented_Reality/master/assets/AR_TS14.obj?token=AO4L6XHBZA27NYZDYDIH24C7YKZBU"></a-asset-item>
+        <!--this "asset" container specifies the model we need to make appear, and its material; each is given a name ("id")-->
+          <a-asset-item id="test_embryo" src="https://raw.githubusercontent.com/StefanoVianello/Augmented_Reality/master/assets/AR_TS14.obj?token=AO4L6XE4RZM56YPFRY2KLRK7YLAVA"></a-asset-item>
           <a-asset-item id="test_embryo-mtl" src="https://raw.githubusercontent.com/StefanoVianello/Augmented_Reality/master/assets/AR_TS14.mtl?token=AO4L6XC332U7UQ5CY6W2X3K7YK7NW"></a-asset-item>
         </a-assets>
 
         <a-marker id="animated-marker" type="barcode" value="4">
+        <!--the "marker" tag is set as to recognise triggers of type "barcode", in this case the one representing value "4"-->
+        <!--the "marker" container indicates which asset is associated with it. Here, our element with id "test_embryo"-->
           <a-obj-model src="#test_embryo" mtl="#test_embryo-mtl" scale=" 0.1 0.1 0.1" position="-0.8 -0.8 0" rotation="0 -90 90"></a-obj-model>
         </a-marker>
 
         <a-entity camera></a-entity>
+        <!--defines the existence of a "camera" entity-->
+
      </a-scene>
 
     </body>

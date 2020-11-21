@@ -5,7 +5,7 @@ This GitHub repository provides a simple setup with the mininal elements to be a
 
 ![Illustration of ARjs setup](README_image1.JPG)
 
-* The folder "assets" contains the embryo model(s) one wants to make appear. After having created the corresponding scene in Blender, export the objects as a ".obj" file (File>Export>Wavefront (.obj)). This will also create a materials file (.mtl). Copy both files in this folder.
+* The folder :open_file_folder: "assets" contains the embryo model(s) one wants to make appear. After having created the corresponding scene in Blender, export the objects as a ".obj" file (File>Export>Wavefront (.obj)). This will also create a materials file (.mtl). Copy both files in this folder.
 
 * The folder "barcodes" contains a library of black and white motifs that can be used as triggers of your embryonic model. When a phone camera will detect one of such motifs, the corresponding object from your asset folder will appear.
 
